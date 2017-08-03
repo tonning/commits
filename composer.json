@@ -1,0 +1,50 @@
+{
+    "name": "tonning/commits",
+    "description": "A Laravel package to get latest git commit messages.",
+    "keywords": [
+        "tonning",
+        "commits"
+    ],
+    "homepage": "https://github.com/tonning/commits",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Kristoffer Tonning",
+            "email": "tonning@gmail.com",
+            "homepage": "https://tonning.be",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.1"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^6.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Spatie\\Skeleton\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Spatie\\Skeleton\\Test\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit"
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Spatie\\Skeleton\\SkeletonServiceProvider"
+            ],
+            "aliases": {
+                "Skeleton": "Spatie\\Skeleton\\SkeletonFacade"
+            }
+        }
+    }
+}
