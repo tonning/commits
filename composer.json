@@ -11,24 +11,25 @@
         {
             "name": "Kristoffer Tonning",
             "email": "tonning@gmail.com",
-            "homepage": "https://tonning.be",
+            "homepage": "https://kristoffertonning.com",
             "role": "Developer"
         }
     ],
     "require": {
-        "php": "^7.1"
+        "php": "^7.1",
+        "nesbot/carbon": "^1.22"
     },
     "require-dev": {
         "phpunit/phpunit": "^6.0"
     },
     "autoload": {
         "psr-4": {
-            "Spatie\\Skeleton\\": "src"
+            "Tonning\\Commits\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Spatie\\Skeleton\\Test\\": "tests"
+            "Tonning\\Commits\\Test\\": "tests"
         }
     },
     "scripts": {
@@ -36,15 +37,5 @@
     },
     "config": {
         "sort-packages": true
-    },
-    "extra": {
-        "laravel": {
-            "providers": [
-                "Spatie\\Skeleton\\SkeletonServiceProvider"
-            ],
-            "aliases": {
-                "Skeleton": "Spatie\\Skeleton\\SkeletonFacade"
-            }
-        }
     }
 }
