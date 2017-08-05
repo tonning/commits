@@ -3,8 +3,8 @@
 namespace Tonning\Commits;
 
 use Carbon\Carbon;
-use Illuminate\Contracts\Support\Arrayable;
 use Illuminate\Contracts\Support\Jsonable;
+use Illuminate\Contracts\Support\Arrayable;
 
 class Commit implements Arrayable, Jsonable
 {
@@ -111,7 +111,7 @@ class Commit implements Arrayable, Jsonable
 
     public function url()
     {
-        return config('commits.repository_url') . '/commit/' . $this->hash;
+        return config('commits.repository_url').'/commit/'.$this->hash;
     }
 
     public function toArray()

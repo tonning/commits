@@ -22,7 +22,6 @@ class CommitsServiceProvider extends ServiceProvider
                 PersistCommitMessages::class,
                 SendCommitMessagesNotification::class,
             ]);
-
         }
     }
 

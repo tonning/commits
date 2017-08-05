@@ -3,9 +3,9 @@
 namespace Tonning\Commits\Commands;
 
 use File;
+use Tonning\Commits\Commits;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Notification;
-use Tonning\Commits\Commits;
 
 class SendCommitMessagesNotification extends Command
 {
@@ -56,7 +56,7 @@ class SendCommitMessagesNotification extends Command
         } else {
             $branch = $this->choice('Which branch?', $branches = Commits::getBranches(), Commits::getCurrentBranchIndex($branches));
             $from = $this->ask("Commit hash to start from? Latest commit pushed to <comment>{$branch}</comment> is:", Commits::getLatestCommitHash($branch));
-            $to = $this->ask("Commit hash to end with?", 'HEAD');
+            $to = $this->ask('Commit hash to end with?', 'HEAD');
         }
 
         return $this->notify((new Commits)->getCommits($branch, $from, $to));

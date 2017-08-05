@@ -3,8 +3,8 @@
 namespace Tonning\Commits;
 
 use Illuminate\Support\Str;
-use Symfony\Component\Process\Exception\ProcessFailedException;
 use Symfony\Component\Process\ProcessBuilder;
+use Symfony\Component\Process\Exception\ProcessFailedException;
 
 class Commits
 {
@@ -17,7 +17,7 @@ class Commits
             'git',
             'log',
             $branch,
-            "{$from}..{$to}"
+            "{$from}..{$to}",
         ]);
 
         $lines = collect(explode("\n", $rawLogOutput));
