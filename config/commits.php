@@ -2,7 +2,7 @@
 
 return [
     'notifiables' => [
-        \App\Admin::class
+        \App\Admin::class,
     ],
 
     'notification' => \Tonning\Commits\Notifications\Deployed::class,

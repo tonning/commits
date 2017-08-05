@@ -2,14 +2,11 @@
 
 namespace Tonning\Commits\Commands;
 
-use Illuminate\Console\Command;
-use Illuminate\Support\Collection;
-use Illuminate\Support\Facades\File;
 use Illuminate\Support\Str;
-use Symfony\Component\Process\Exception\ProcessFailedException;
-use Symfony\Component\Process\ProcessBuilder;
 use Tonning\Commits\Commit;
 use Tonning\Commits\Commits;
+use Illuminate\Console\Command;
+use Illuminate\Support\Facades\File;
 
 class PersistCommitMessages extends Command
 {
@@ -53,7 +50,7 @@ class PersistCommitMessages extends Command
         } else {
             $branch = $this->choice('Which branch?', $branches = Commits::getBranches(), Commits::getCurrentBranchIndex($branches));
             $from = $this->ask("Commit hash to start from? Latest commit pushed to <comment>{$branch}</comment> is:", Commits::getLatestCommitHash($branch));
-            $to = $this->ask("Commit hash to end with?", 'HEAD');
+            $to = $this->ask('Commit hash to end with?', 'HEAD');
         }
 
         $commits = (new Commits)->getCommits($branch, $from, $to);
@@ -65,7 +62,7 @@ class PersistCommitMessages extends Command
                 $commit->commitMessage(),
                 $commit->author(),
                 $commit->date(),
-                Str::limit($commit->hash(), 8, '')
+                Str::limit($commit->hash(), 8, ''),
             ];
         });
 
